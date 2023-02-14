@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BnW-qA-Oln">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="UBD-DQ-1mh">
+            <objects>
+                <viewController id="KwH-h4-86e" customClass="ViewController" customModule="MapApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FQN-qh-ojO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="W1u-PV-ZXL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hVR-tE-fKi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W1u-PV-ZXL" firstAttribute="leading" secondItem="hVR-tE-fKi" secondAttribute="leading" id="Huh-lf-yF3"/>
+                            <constraint firstItem="hVR-tE-fKi" firstAttribute="trailing" secondItem="W1u-PV-ZXL" secondAttribute="trailing" id="Y6B-n8-HcF"/>
+                            <constraint firstItem="W1u-PV-ZXL" firstAttribute="top" secondItem="hVR-tE-fKi" secondAttribute="top" id="pGx-Y5-yEM"/>
+                            <constraint firstItem="hVR-tE-fKi" firstAttribute="bottom" secondItem="W1u-PV-ZXL" secondAttribute="bottom" id="uLr-rN-7Ap"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eiQ-KD-sTB"/>
+                    <connections>
+                        <outlet property="tableView" destination="W1u-PV-ZXL" id="t14-FE-hdj"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMapsVC" id="n6M-nF-GUL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eyN-8E-5gf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318.84057971014494" y="2.4456521739130435"/>
+        </scene>
+        <!--Maps View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapsViewController" customModule="MapApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Isim Giriniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3nD-fS-PYH">
+                                <rect key="frame" x="20" y="64" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notunuzu Giriniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jf-58-wqm">
+                                <rect key="frame" x="20" y="121" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KB-cC-FVg">
+                                <rect key="frame" x="100" y="676" width="212" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="POo-c0-uBW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="KAYDET" cornerStyle="large" titleAlignment="center">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="tintColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="kaydetTiklandi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHP-7k-cGC"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfL-Xj-FVZ">
+                                <rect key="frame" x="-9" y="163" width="415" height="505"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AfL-Xj-FVZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-29" id="21c-j0-LZa"/>
+                            <constraint firstItem="1KB-cC-FVg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="2Ht-8B-maK"/>
+                            <constraint firstItem="AfL-Xj-FVZ" firstAttribute="top" secondItem="4jf-58-wqm" secondAttribute="bottom" constant="8" id="4LC-e0-QJs"/>
+                            <constraint firstItem="3nD-fS-PYH" firstAttribute="trailing" secondItem="4jf-58-wqm" secondAttribute="trailing" id="5Pz-JE-fBF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AfL-Xj-FVZ" secondAttribute="trailing" constant="8" id="HeY-Gk-O39"/>
+                            <constraint firstItem="3nD-fS-PYH" firstAttribute="leading" secondItem="4jf-58-wqm" secondAttribute="leading" id="KNQ-eE-0SE"/>
+                            <constraint firstItem="3nD-fS-PYH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NxJ-QC-R3r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1KB-cC-FVg" secondAttribute="trailing" constant="102" id="U0d-uO-aqu"/>
+                            <constraint firstItem="3nD-fS-PYH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="UcP-UT-lZm"/>
+                            <constraint firstItem="3nD-fS-PYH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="mcY-B5-kp8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1KB-cC-FVg" secondAttribute="bottom" constant="20" id="oZR-7A-odR"/>
+                            <constraint firstItem="4jf-58-wqm" firstAttribute="top" secondItem="3nD-fS-PYH" secondAttribute="bottom" constant="23" id="ols-AM-krL"/>
+                            <constraint firstItem="1KB-cC-FVg" firstAttribute="top" secondItem="AfL-Xj-FVZ" secondAttribute="bottom" constant="8" id="zYB-hX-NuA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JvW-3t-EWQ"/>
+                    <connections>
+                        <outlet property="isimTextLabel" destination="3nD-fS-PYH" id="v9P-C2-opP"/>
+                        <outlet property="mapView" destination="AfL-Xj-FVZ" id="noi-hS-yoU"/>
+                        <outlet property="notTextLabel" destination="4jf-58-wqm" id="bw7-Mu-Ued"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="3.2608695652173916"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0qC-iI-Jll">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BnW-qA-Oln" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UTh-lG-A5I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KwH-h4-86e" kind="relationship" relationship="rootViewController" id="DnP-EM-u9C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YlN-Tv-pZC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-419" y="2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
